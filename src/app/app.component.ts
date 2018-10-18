@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'nyt-root',
+  selector: 'nyt-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
