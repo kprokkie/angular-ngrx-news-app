@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SectionsComponent } from './components/sections/sections.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewsComponent } from './components/news/news.component';
-import { NewsItemComponent } from './components/news-item/news-item.component';
+import { NewsItemComponent } from './components/news/news-item/news-item.component';
 
 @NgModule({
   declarations: [
