@@ -1,0 +1,12 @@
+.nyt-sections {
+    ul {
+        margin: 0;
+        padding: 0;
+        
+        li {
+            padding: 0.4rem 1rem;
+            text-transform: capitalize;
+            border-bottom: 1px solid #ccc;
+        }
+    }
+}

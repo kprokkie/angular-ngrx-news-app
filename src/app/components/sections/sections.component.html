@@ -1,3 +1,5 @@
-<p>
-  sections works!
-</p>
+<div class="nyt-sections">
+  <ul>
+      <li *ngFor="let section of allSections" [routerLink]="['/section', section]">{{section}}</li>
+  </ul>
+</div>

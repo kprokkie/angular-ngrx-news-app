@@ -1,5 +1,13 @@
-<nyt-header></nyt-header>
-<nyt-sections></nyt-sections>
-<nyt-navbar></nyt-navbar>
-<nyt-news></nyt-news>
-<router-outlet></router-outlet>
+<section class="app-section">
+    <nav class="nav-bar">
+        <nyt-sections></nyt-sections>
+    </nav>
+    <main class="main-section">
+        <nyt-header></nyt-header>
+        <nyt-navbar></nyt-navbar>
+        <section class="content-section">
+            <!-- <nyt-news></nyt-news> -->
+        </section>
+        <router-outlet></router-outlet>
+    </main>
+</section>
