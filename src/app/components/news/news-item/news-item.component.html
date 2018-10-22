@@ -1,3 +1,20 @@
-<p>
-  news-item works!
-</p>
+<div class="nyt-news-item">
+  <div class="news-item" *ngFor="let item of news">
+    <div class="item-img">
+      <img src="{{item.multimedia[1]?.url}}">
+    </div>
+    <div class="item-data">
+      <div>
+          <p class="item-title">{{item.title}}</p>
+          <span>{{item.byline}}</span>
+          <p class="item-abstract">{{item.abstract}}</p>
+          <span class="item-date">{{item.published_date | date}}</span>
+      </div>
+      <div>
+        Tags: <span *ngFor="let tag of item.des_facet">{{tag}}</span>
+
+        <a href="{{item.url}}" target="_blank">READ MORE ...</a>
+      </div>
+    </div>
+  </div>
+</div>  

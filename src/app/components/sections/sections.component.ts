@@ -43,6 +43,7 @@ export class SectionsComponent implements OnInit {
           //console.log(this.allSections);
         }
       );
+      
   }
 
 }

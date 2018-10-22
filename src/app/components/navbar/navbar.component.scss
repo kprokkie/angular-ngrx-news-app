@@ -1,0 +1,20 @@
+.nyt-navbar {
+    ul {
+       margin: 0;
+       padding: .5rem 0;
+
+       display: flex;
+       list-style-type: none;
+       justify-content: center;
+
+       font-size: 1rem;
+       font-weight: bold;
+
+       background-color: #474b4f; 
+       color: #fff;
+       
+       li {
+        margin: 0 1rem;
+       }
+    }
+}
