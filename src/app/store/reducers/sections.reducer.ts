@@ -24,7 +24,7 @@ export const initialState: SectionsState = {
         'arts',
         'books',
         'movies',
-        'theatre',
+        'theater',
         'fashion',
         'food',
         'travel',

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 
 import { Subject } from 'rxjs';
@@ -8,6 +7,8 @@ import { takeUntil } from 'rxjs/operators';
 import { News } from '../../models/news';
 import { AppState } from '../../store/reducers';
 import { getNewsSection } from '../../store/selectors/news.selectors';
+
+import * as fromActions from '../../store/actions';
 
 @Component({
   selector: 'nyt-navbar',
@@ -43,6 +44,10 @@ export class NavbarComponent implements OnInit {
         }
       );
 
+  }
+
+  filterNews(filter: string): void {
+    this.store.dispatch(new fromActions.FilterSubSection(filter));
   }
 
 }

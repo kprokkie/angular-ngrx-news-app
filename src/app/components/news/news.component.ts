@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../../store/reducers';
 import * as fromActions from '../../store/actions';
-import { getNewsSection } from '../../store/selectors/news.selectors';
+import { getNewsSection, getFilterSubSection } from '../../store/selectors/news.selectors';
 import { News } from '../../models/news';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -39,7 +39,16 @@ export class NewsComponent implements OnInit {
         this.store.dispatch(new fromActions.LoadNewsSection(params.section));
       });
 
-    this.store.pipe(select(getNewsSection))
+    // this.store.pipe(select(getNewsSection))
+    //   .pipe(takeUntil(this.unsubscribe))
+    //   .subscribe(
+    //     sectionNews => {
+    //       this.sectionNews = sectionNews;
+    //       console.log(this.sectionNews);
+    //     }
+    //   );
+
+    this.store.pipe(select(getFilterSubSection))
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(
         sectionNews => {

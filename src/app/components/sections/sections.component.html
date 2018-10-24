@@ -1,5 +1,6 @@
 <div class="nyt-sections">
   <ul>
-      <li *ngFor="let section of allSections" [routerLink]="['/section', section]">{{section}}</li>
+      <li *ngFor="let section of allSections" 
+      (click)="sectionNews(section)">{{section}}</li>
   </ul>
 </div>

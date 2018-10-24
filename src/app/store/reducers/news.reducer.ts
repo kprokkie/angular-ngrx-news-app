@@ -6,6 +6,7 @@ import { NewsActions, NewsActionTypes } from "../actions";
  */
 export interface NewsState {
     currentNewsSection: string,
+    filterNewsSection: string,
     sectionNews: News[]
 }
 
@@ -14,6 +15,7 @@ export interface NewsState {
  */
 export const initialState: NewsState = {
     currentNewsSection: '',
+    filterNewsSection: '',
     sectionNews: []
 }
 
@@ -30,12 +32,16 @@ export function reducer(state: NewsState = initialState, action: NewsActions): N
         case NewsActionTypes.LOAD_SECTION_NEWS_SUCCESS: console.log('LOAD_SECTION_NEWS SU');
             return {
                 ...state, 
+                filterNewsSection: '',
                 sectionNews: action.payload
             };
         case NewsActionTypes.LOAD_SECTION_NEWS_FAILURE: console.log('LOAD_SECTION_NEWS FA');
             return state;
         case NewsActionTypes.FILTER_SUB_SECTION: console.log('FILTER_SUB_SECTION');
-            return state;
+            return { 
+                ...state,
+                filterNewsSection: action.payload
+            };
         default:
             return state;
     }

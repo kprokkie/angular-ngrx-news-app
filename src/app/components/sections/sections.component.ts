@@ -1,22 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../../store/reducers';
 import { getAllSections } from '../../store/selectors/sections.selectors';
 import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
+import * as fromActions from '../../store/actions';
+
 @Component({
   selector: 'nyt-sections',
   templateUrl: './sections.component.html',
   styleUrls: ['./sections.component.scss']
 })
+
 export class SectionsComponent implements OnInit {
 
   allSections$: Observable<Array<string>>;
   allSections: Array<string> = [];
   unsubscribe: Subject<void> = new Subject();
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>,
+    private router: Router) { }
 
   ngOnInit() {
     this.initSubscriptions();
@@ -43,7 +48,12 @@ export class SectionsComponent implements OnInit {
           //console.log(this.allSections);
         }
       );
-      
+
+  }
+
+  sectionNews(section: string): void {
+    //this.store.dispatch(new fromActions.FilterSubSection(''));
+    this.router.navigate(['/section', section]);
   }
 
 }

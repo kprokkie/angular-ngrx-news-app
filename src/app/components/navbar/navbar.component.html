@@ -1,5 +1,5 @@
 <div class="nyt-navbar">
   <ul>
-    <li *ngFor="let navItem of subSectionsNavItems">{{navItem}}</li>
+    <li *ngFor="let navItem of subSectionsNavItems" (click)="filterNews(navItem)">{{navItem}}</li>
   </ul>
 </div>
