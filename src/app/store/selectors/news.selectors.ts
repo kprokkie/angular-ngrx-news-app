@@ -16,9 +16,11 @@ export const getNewsSection = createSelector(
 export const getFilterSubSection = createSelector(
     selectNewsState,
     news => news.sectionNews.filter((item: News) => {
+        // section of news selected
         if (!news.filterNewsSection.length) {
             return item;
         } else {
+            // subsection of news selected
             if (item.subsection === news.filterNewsSection) {
                 return item;
             }
@@ -26,6 +28,9 @@ export const getFilterSubSection = createSelector(
     })
 )
 
+/**
+ * Get Current News Section Selector
+ */
 export const getCurrentNewsSection = createSelector(
     selectNewsState,
     news => news.currentNewsSection

@@ -1,5 +1,5 @@
 import { News } from "../../models/news";
-import { NewsActions, NewsActionTypes } from "../actions";
+import { NewsActions, NewsActionTypes } from "../actions/news.actions";
 
 /**
  * News State Interface
@@ -24,20 +24,20 @@ export const initialState: NewsState = {
  */
 export function reducer(state: NewsState = initialState, action: NewsActions): NewsState {
     switch (action.type) {
-        case NewsActionTypes.CURRENT_NEWS_SECTION: console.log('CURRENT_NEWS_SECTION');
+        case NewsActionTypes.CURRENT_NEWS_SECTION:
             return {
                 ...state,
                 currentNewsSection: action.payload
             };
-        case NewsActionTypes.LOAD_SECTION_NEWS_SUCCESS: console.log('LOAD_SECTION_NEWS SU');
+        case NewsActionTypes.LOAD_SECTION_NEWS_SUCCESS:
             return {
                 ...state, 
                 filterNewsSection: '',
                 sectionNews: action.payload
             };
-        case NewsActionTypes.LOAD_SECTION_NEWS_FAILURE: console.log('LOAD_SECTION_NEWS FA');
+        case NewsActionTypes.LOAD_SECTION_NEWS_FAILURE:
             return state;
-        case NewsActionTypes.FILTER_SUB_SECTION: console.log('FILTER_SUB_SECTION');
+        case NewsActionTypes.FILTER_SUB_SECTION:
             return { 
                 ...state,
                 filterNewsSection: action.payload

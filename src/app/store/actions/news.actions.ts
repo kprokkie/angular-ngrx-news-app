@@ -24,16 +24,24 @@ export enum NewsActionTypes {
 }
 
  /**
-  * Load News Section Action
+  * Load News Section Action [Effect]
   */
 export class LoadNewsSection implements Action {
     readonly type = NewsActionTypes.LOAD_SECTION_NEWS;
     constructor(public payload: string) {}
 }
+
+ /**
+  * Load News Section Action [Success]
+  */
 export class LoadNewsSectionSuccess implements Action {
     readonly type = NewsActionTypes.LOAD_SECTION_NEWS_SUCCESS;
     constructor(public payload: News[]) {}
 }
+
+ /**
+  * Load News Section Action [Failure]
+  */
 export class LoadNewsSectionFailure implements Action {
     readonly type = NewsActionTypes.LOAD_SECTION_NEWS_FAILURE;
     constructor(public payload: string) {}

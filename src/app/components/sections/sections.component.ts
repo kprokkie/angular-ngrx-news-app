@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
-import { AppState } from '../../store/reducers';
-import { getAllSections } from '../../store/selectors/sections.selectors';
+
 import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import * as fromActions from '../../store/actions';
+// ngrx store
+import { AppState } from '../../store/reducers';
+import { getAllSections } from '../../store/selectors/sections.selectors';
 
 @Component({
   selector: 'nyt-sections',
@@ -32,12 +33,14 @@ export class SectionsComponent implements OnInit {
     this.unsubscribe.complete();
   }
 
+  /**
+   * Holding Subscriptions
+   */
   initSubscriptions(): void {
     // TWO ways to pick data
     // 1. as a observable and directly bind to template using async pipe
     // subsciption & unsubscription not required as angular does for us
     this.allSections$ = this.store.select(getAllSections);
-    //console.log(this.allSections$);
 
     // 2. subscribe the store and mutute the data if required before display
     this.store.pipe(select(getAllSections))
@@ -45,14 +48,16 @@ export class SectionsComponent implements OnInit {
       .subscribe(
         allSections => {
           this.allSections = allSections;
-          //console.log(this.allSections);
         }
       );
 
   }
 
+  /**
+   * Navigate and load different section of news
+   * @param section - section news
+   */
   sectionNews(section: string): void {
-    //this.store.dispatch(new fromActions.FilterSubSection(''));
     this.router.navigate(['/section', section]);
   }
 

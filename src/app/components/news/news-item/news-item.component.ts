@@ -16,6 +16,10 @@ export class NewsItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Watch changes to property
+   * @param changes - changes to bind property
+   */
   ngOnChanges(changes: SimpleChanges): void {
     this.news = changes.news.currentValue;
   }

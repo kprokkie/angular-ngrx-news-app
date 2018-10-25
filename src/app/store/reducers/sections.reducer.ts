@@ -1,9 +1,11 @@
+import { SectionsActions, SectionsActionTypes } from '../actions/sections.actions';
+
 /**
  * Section State Interface
  */
 export interface SectionsState {
     allSections: Array<string>;
-    currentSections: string;
+    currentSection: string;
 }
 
 /**
@@ -32,16 +34,21 @@ export const initialState: SectionsState = {
         'realestate',
         'automobiles'
     ],
-    currentSections: 'home'
+    currentSection: 'home'
 }
 
 /**
  * Sections Reducer
  */
-export function reducer(state: SectionsState = initialState, actions): SectionsState {
-    switch (actions.type) {
-        case 'LOAD_SECTIONS': console.log('LOAD_SECTIONS');
+export function reducer(state: SectionsState = initialState, action: SectionsActions): SectionsState {
+    switch (action.type) {
+        case SectionsActionTypes.LOAD_SECTIONS:
             return state;
+        case SectionsActionTypes.SET_CURRENT_SECTION:
+            return {
+                ...state,
+                currentSection: action.payload
+            };
         default:
             return state;
     }

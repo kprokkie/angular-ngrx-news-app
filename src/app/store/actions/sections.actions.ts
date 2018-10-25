@@ -5,7 +5,7 @@ import { Action } from '@ngrx/store';
  */
 export enum SectionsActionTypes {
     LOAD_SECTIONS = '[News App] Load Sections',
-    GET_CURRENT_SECTION = '[News App] Get Current Section'
+    SET_CURRENT_SECTION = '[News App] Set Current Section'
 }
 
 /**
@@ -23,13 +23,13 @@ export class LoadSections implements Action {
  /**
   * Current Section Action
   */
- export class GetCurrentSection implements Action {
-    readonly type = SectionsActionTypes.GET_CURRENT_SECTION;
-    constructor() {}
+ export class SetCurrentSection implements Action {
+    readonly type = SectionsActionTypes.SET_CURRENT_SECTION;
+    constructor(public payload: string) {}
 }
  
 /**
  * Union Type for Action Creators
  */
 export type SectionsActions = LoadSections 
-    | GetCurrentSection;
+    | SetCurrentSection;

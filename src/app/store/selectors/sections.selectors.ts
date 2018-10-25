@@ -14,5 +14,5 @@ export const getAllSections = createSelector(
  */
 export const getCurrentSection = createSelector(
     selectSectionsState,
-    sections => sections.currentSections
+    sections => sections.currentSection
 )
