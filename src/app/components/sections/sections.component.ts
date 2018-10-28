@@ -54,7 +54,7 @@ export class SectionsComponent implements OnInit {
   }
 
   /**
-   * Navigate and load different section of news
+   * Navigate and load different section of news -- alternative way
    * @param section - section news
    */
   sectionNews(section: string): void {

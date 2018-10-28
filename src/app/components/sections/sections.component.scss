@@ -2,7 +2,6 @@
     ul {
         margin: 0;
         padding: 0;
-        width: 200px;
         height: calc(100vh);
         overflow-y: auto;
         
@@ -11,6 +10,10 @@
             text-transform: capitalize;
             border-bottom: 1px solid #ccc;
             cursor: pointer;
+
+            &.active-section {
+                background: #2f7395;
+            }
         }
     }
 }

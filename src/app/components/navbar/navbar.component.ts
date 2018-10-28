@@ -20,6 +20,7 @@ import * as fromActions from '../../store/actions';
 export class NavbarComponent implements OnInit {
 
   sectionNews: News[];
+  currentSubSection: string;
   subSectionsNavItems: string[] = [];
   unsubscribe: Subject<void> = new Subject();
 
@@ -39,6 +40,7 @@ export class NavbarComponent implements OnInit {
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(
         sectionNews => {
+          this.currentSubSection = '';
           this.subSectionsNavItems = [];
           for (const item of sectionNews) {
             // pulling all subsection which is unique and non empty
@@ -56,6 +58,7 @@ export class NavbarComponent implements OnInit {
    * @param filter - subsection string
    */
   filterNews(filter: string): void {
+    this.currentSubSection = filter;
     this.store.dispatch(new fromActions.FilterSubSection(filter));
   }
 
