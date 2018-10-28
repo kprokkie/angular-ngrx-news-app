@@ -1,15 +1,43 @@
+@import "../../../../styles-variables.scss";
+
 .nyt-news-item {
-    .news-item {
-        .item-img{
+    .card {
+        margin-bottom: 1rem;
+        box-shadow: $card-1;
 
+        &:last-child {
+            margin-bottom: 0;
         }
-        .item-data {
-            .item-title {
 
-            }
-            .item-abstract {
+        .media > img {
+            box-shadow: $card-2;
+            border-radius: 5px;
+        }
 
-            }
+        .publisher {
+            font-style: italic;
+            font-size: 12px;
+            font-weight: bold;
+            float: right;
+        }
+
+        .badge {
+            margin-left: 0.4rem;
+        }
+
+        .news-detail {
+            margin-bottom: 5px;
+        }
+
+        .external-link {
+            font-style: italic;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .blockquote-footer > cite {
+            color: #000;
+            font-weight: bold;
         }
     }
 }

@@ -1,19 +1,17 @@
-.app-section {
+.nyt-app {
     display: flex;
 
     .nav-bar {
-        flex: 2;
-        min-height: calc(100vh);
         background-color: #333;
         color: #fff; 
     }
 
-    .main-section {
+    .nyt-main {
         flex: 10;
-        min-height: calc(100vh);
 
         .content-section {
-
+            height: calc(100vh - 140px);
+            overflow-y: auto;
         }
     }
 

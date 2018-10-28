@@ -1,20 +1,15 @@
 <div class="nyt-news-item">
-  <div class="news-item" *ngFor="let item of news">
-    <div class="item-img">
-      <img src="{{item.multimedia[1]?.url}}">
-    </div>
-    <div class="item-data">
-      <div>
-          <p class="item-title">{{item.title}}</p>
-          <span>{{item.byline}}</span>
-          <p class="item-abstract">{{item.abstract}}</p>
-          <span class="item-date">{{item.published_date | date}}</span>
-      </div>
-      <div>
-        Tags: <span *ngFor="let tag of item.des_facet">{{tag}}</span>
-
-        <a href="{{item.url}}" target="_blank">READ MORE ...</a>
-      </div>
+  <div class="card" *ngFor="let item of news">
+    <div class="card-body">
+        <div class="media">
+          <img class="mr-3" src="{{item.multimedia[1]?.url}}" alt="{{item.multimedia[1]?.caption}}">
+          <div class="media-body">
+            <h5 class="mt-0">{{item.title}}</h5>
+            <p class="news-detail">{{item.abstract}} <a class="external-link" href="{{item.url}}" target="_blank">READ MORE <i class="fas fa-link"></i></a></p>
+            <p class="blockquote-footer">{{item.byline}} <cite title="Published Date">{{item.published_date | date}}</cite></p>
+            <span><i class="fas fa-tags"></i><span class="badge badge-info" *ngFor="let tag of item?.des_facet">{{tag}}</span></span>
+          </div>
+        </div>
     </div>
   </div>
-</div>  
+</div>

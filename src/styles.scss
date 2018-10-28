@@ -11,3 +11,8 @@ body {
     margin: 0 auto;
     box-shadow: $card-1;
 }
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
