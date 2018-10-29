@@ -1,13 +1,13 @@
 <div class="nyt-news-item">
-  <div class="card" *ngFor="let item of news">
+  <div class="card">
     <div class="card-body">
         <div class="media">
-          <img class="mr-3" src="{{item.multimedia[1]?.url}}" alt="{{item.multimedia[1]?.caption}}">
+          <img class="mr-3" src="{{news.multimedia[1]?.url}}" alt="{{news.multimedia[1]?.caption}}">
           <div class="media-body">
-            <h5 class="mt-0">{{item.title}}</h5>
-            <p class="news-detail">{{item.abstract}} <a class="external-link" href="{{item.url}}" target="_blank">READ MORE <i class="fas fa-link"></i></a></p>
-            <p class="blockquote-footer">{{item.byline}} <cite title="Published Date">{{item.published_date | date}}</cite></p>
-            <span><i class="fas fa-tags"></i><span class="badge badge-info" *ngFor="let tag of item?.des_facet">{{tag}}</span></span>
+            <h5 class="mt-0">{{news.title}}</h5>
+            <p class="news-detail">{{news.abstract}} <a class="external-link" href="{{news.url}}" target="_blank">READ MORE <i class="fas fa-link"></i></a></p>
+            <p class="blockquote-footer">{{news.byline}} <cite title="Published Date">{{news.published_date | date}}</cite></p>
+            <span><i class="fas fa-tags"></i><span class="badge badge-info" *ngFor="let tag of news?.des_facet">{{tag}}</span></span>
           </div>
         </div>
     </div>

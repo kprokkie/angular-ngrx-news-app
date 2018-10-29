@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { News } from '../../../models/news';
 
 @Component({
@@ -9,19 +9,11 @@ import { News } from '../../../models/news';
 
 export class NewsItemComponent implements OnInit {
 
-  @Input() news: News[] = [];
+  @Input() news: News;
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  /**
-   * Watch changes to property
-   * @param changes - changes to bind property
-   */
-  ngOnChanges(changes: SimpleChanges): void {
-    this.news = changes.news.currentValue;
   }
 
 }

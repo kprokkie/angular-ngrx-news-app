@@ -1,8 +1,9 @@
 @import "../../../../styles-variables.scss";
 
 .nyt-news-item {
+    margin-bottom: 1rem;
+    
     .card {
-        margin-bottom: 1rem;
         box-shadow: $card-1;
         background-color: #fefbf7;
 
