@@ -1,8 +1,10 @@
 # ![Screenshot](./src/favicon.ico) News Application | Angular with NgRx
 
-It is a real-time `News Application` using New York Times news API.
+It is a real-time `News Application` using New York Times news API. 
 
 The New York Times is an American newspaper based in New York City with worldwide influence and readership.
+
+> [Let's View Live !!](https://kprokkie.github.io/angular-ngrx-news-app/)
 
 Following are the few concepts used while building this application:
 
