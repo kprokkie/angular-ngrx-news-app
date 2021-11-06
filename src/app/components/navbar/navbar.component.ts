@@ -6,7 +6,7 @@ import { takeUntil } from 'rxjs/operators';
 
 import { News } from '../../models/news';
 
-// ngrx store 
+// ngrx store
 import { AppState } from '../../store/reducers';
 import { getNewsSection } from '../../store/selectors/news.selectors';
 import * as fromActions from '../../store/actions';
@@ -19,8 +19,8 @@ import * as fromActions from '../../store/actions';
 
 export class NavbarComponent implements OnInit {
 
-  sectionNews: News[];
-  currentSubSection: string;
+  sectionNews: News[] = [];
+  currentSubSection: string = '';
   subSectionsNavItems: string[] = [];
   unsubscribe: Subject<void> = new Subject();
 

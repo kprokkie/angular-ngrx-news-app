@@ -4,52 +4,52 @@ import { SectionsActions, SectionsActionTypes } from '../actions/sections.action
  * Section State Interface
  */
 export interface SectionsState {
-    allSections: Array<string>;
-    currentSection: string;
+  allSections: string[];
+  currentSection: string;
 }
 
 /**
- * Intial Sections State
+ * Initial Sections State
  */
 export const initialState: SectionsState = {
-    allSections: [
-        'home',
-        'opinion',
-        'world',
-        'national',
-        'politics',
-        'business',
-        'technology',
-        'science',
-        'health',
-        'sports',
-        'arts',
-        'books',
-        'movies',
-        'theater',
-        'fashion',
-        'food',
-        'travel',
-        'magazine',
-        'realestate',
-        'automobiles'
-    ],
-    currentSection: 'home'
+  allSections: [
+    'home',
+    'opinion',
+    'world',
+    'national',
+    'politics',
+    'business',
+    'technology',
+    'science',
+    'health',
+    'sports',
+    'arts',
+    'books',
+    'movies',
+    'theater',
+    'fashion',
+    'food',
+    'travel',
+    'magazine',
+    'realestate',
+    'automobiles'
+  ],
+  currentSection: 'home'
 }
 
 /**
  * Sections Reducer
  */
 export function reducer(state: SectionsState = initialState, action: SectionsActions): SectionsState {
-    switch (action.type) {
-        case SectionsActionTypes.LOAD_SECTIONS:
-            return state;
-        case SectionsActionTypes.SET_CURRENT_SECTION:
-            return {
-                ...state,
-                currentSection: action.payload
-            };
-        default:
-            return state;
-    }
+  switch (action.type) {
+    case SectionsActionTypes.LOAD_SECTIONS:
+      return state;
+    case SectionsActionTypes.SET_CURRENT_SECTION:
+      return {
+        ...state,
+        currentSection: action.payload
+      };
+    default:
+      return state;
+  }
 }
