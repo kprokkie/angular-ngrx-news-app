@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { NewsActionTypes } from './news.actions';\n/**\r\n * Load News Section Action [Failure]\r\n */\n\nexport class LoadNewsSectionFailure {\n  constructor(payload) {\n    this.payload = payload;\n    this.type = NewsActionTypes.LOAD_SECTION_NEWS_FAILURE;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

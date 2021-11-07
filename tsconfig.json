@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strict": false,
     "importHelpers": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
