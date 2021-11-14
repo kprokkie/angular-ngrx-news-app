@@ -17,8 +17,8 @@ import { getAllSections } from '../../store/selectors/sections.selectors';
 
 export class SectionsComponent implements OnInit {
 
-  allSections$: Observable<Array<string>>;
-  allSections: Array<string> = [];
+  allSections$: Observable<string[]> = new Observable<string[]>();
+  allSections: string[] = [];
   unsubscribe: Subject<void> = new Subject();
 
   constructor(private store: Store<AppState>,
@@ -39,10 +39,10 @@ export class SectionsComponent implements OnInit {
   initSubscriptions(): void {
     // TWO ways to pick data
     // 1. as a observable and directly bind to template using async pipe
-    // subsciption & unsubscription not required as angular does for us
+    // subscription & unsubscription not required as angular does for us
     this.allSections$ = this.store.select(getAllSections);
 
-    // 2. subscribe the store and mutute the data if required before display
+    // 2. subscribe the store and mute the data if required before display
     this.store.pipe(select(getAllSections))
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(

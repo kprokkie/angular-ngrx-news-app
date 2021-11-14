@@ -9,7 +9,7 @@ import { News } from '../../../models/news';
 
 export class NewsItemComponent implements OnInit {
 
-  @Input() news: News;
+  @Input() news: News = {} as News;
 
   constructor() { }
 

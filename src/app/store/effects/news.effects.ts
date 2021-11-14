@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
-import { Effect, Actions, ofType } from '@ngrx/effects';
+import { createEffect, Actions, ofType } from '@ngrx/effects';
 
 import { Observable, of } from 'rxjs';
 import { mergeMap, map, catchError } from '../../../../node_modules/rxjs/operators';
@@ -16,18 +16,18 @@ import * as fromActions from '../actions';
 @Injectable()
 export class NewsEffects {
 
-    constructor(private actions$: Actions,
-        private newsService: NewsService) { }
+  constructor(private actions$: Actions,
+    private newsService: NewsService) { }
 
-    @Effect()
-    loadNews$: Observable<Action> = this.actions$.pipe(
-        ofType(fromActions.NewsActionTypes.LOAD_SECTION_NEWS), // watch action
-        mergeMap((action: LoadNewsSection) =>
-            // service call to get the section news
-            this.newsService.getSectionNews(action.payload).pipe(
-                map((news: NewsInfo) => (new fromActions.LoadNewsSectionSuccess(news.results))),
-                catchError(error => of(new fromActions.LoadNewsSectionFailure(error)))
-            )
-        )
-    );
+
+  loadNews$: Observable<Action> = createEffect(() => this.actions$.pipe(
+    ofType(fromActions.NewsActionTypes.LOAD_SECTION_NEWS), // watch action
+    mergeMap((action: LoadNewsSection) =>
+      // service call to get the section news
+      this.newsService.getSectionNews(action.payload).pipe(
+        map((news: NewsInfo) => (new fromActions.LoadNewsSectionSuccess(news.results))),
+        catchError(error => of(new fromActions.LoadNewsSectionFailure(error)))
+      )
+    )
+  ));
 }

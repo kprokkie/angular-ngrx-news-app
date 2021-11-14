@@ -1,0 +1,1 @@
+{"ast":null,"code":"// start:ng42.barrel\nexport * from './FilterSubSection';\nexport * from './LoadNewsSection';\nexport * from './LoadNewsSectionFailure';\nexport * from './LoadNewsSectionSuccess';\nexport * from './news.actions';\nexport * from './sections.actions'; // end:ng42.barrel","map":null,"metadata":{},"sourceType":"module"}

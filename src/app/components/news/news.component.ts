@@ -20,7 +20,7 @@ import * as fromActions from '../../store/actions';
 
 export class NewsComponent implements OnInit {
 
-  sectionNews: News[];
+  sectionNews: News[] = new Array<News>();
   unsubscribe: Subject<void> = new Subject();
 
   constructor(private store: Store<AppState>,

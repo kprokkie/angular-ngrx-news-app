@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "angular-ngrx-news-app"
+  "defaultProject": "angular-ngrx-news-app",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

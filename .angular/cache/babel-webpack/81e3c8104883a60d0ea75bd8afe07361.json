@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { NewsActionTypes } from './news.actions';\n/**\r\n * Filter SubSection Action\r\n */\n\nexport class FilterSubSection {\n  constructor(payload) {\n    this.payload = payload;\n    this.type = NewsActionTypes.FILTER_SUB_SECTION;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

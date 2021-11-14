@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { SectionsActionTypes } from './sections.actions';\n/**\r\n * Current Section Action\r\n */\n\nexport class SetCurrentSection {\n  constructor(payload) {\n    this.payload = payload;\n    this.type = SectionsActionTypes.SET_CURRENT_SECTION;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
